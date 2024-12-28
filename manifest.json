@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "WhatsApp Privacy Extension",
+    "version": "1.0",
+    "description": "Blurs chats, names, and media in WhatsApp Web for privacy.",
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://web.whatsapp.com/*"],
+        "css": ["styles.css"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html" 
+    },
+    "web_accessible_resources": [{
+      "resources": ["jquery.min.js"], 
+      "matches": ["https://web.whatsapp.com/*"]
+    }]
+  }
